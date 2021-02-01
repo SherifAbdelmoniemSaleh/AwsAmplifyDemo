@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 
 protocol  AccountTextFieldDelegate {
+    func fieldShouldReturn (editableFieldView: AccountTextField)
     func textFieldEdit (editableFieldView: AccountTextField , text : String)
 
 }
@@ -22,6 +23,8 @@ class AccountTextField : UIView {
     
     @IBAction func showHideAction(_ sender: Any) {
     // shpw or hide password
+        editButton.isSelected = !editButton.isSelected
+        editTextField.isSecureTextEntry =  !editButton.isSelected
     }
    
     
@@ -42,17 +45,6 @@ class AccountTextField : UIView {
             return self.editTextField.keyboardType
         } set{
             self.editTextField.keyboardType = newValue
-        }
-    }
-    
-    @IBInspectable var secureTextEntry: Bool {
-        get{
-            return self.editTextField.isSecureTextEntry
-        } set{
-            editTextField.isSecureTextEntry = newValue
-            if secureTextEntry {   // in case of password
-                editButton.isHidden = false
-            }
         }
     }
     
@@ -109,7 +101,17 @@ class AccountTextField : UIView {
 }
 extension AccountTextField : UITextFieldDelegate {
 
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let delegate = delegate {
+            delegate.fieldShouldReturn(editableFieldView: self)
+        }
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+            if let delegate = delegate  {
+                delegate.fieldShouldReturn(editableFieldView: self)
+            }
+    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
 

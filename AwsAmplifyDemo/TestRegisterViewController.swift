@@ -8,13 +8,27 @@
 import UIKit
 
 class TestRegisterViewController: UIViewController, AccountTextFieldDelegate {
+    func fieldShouldReturn(editableFieldView: AccountTextField) {
+        switch editableFieldView {
+        case self.emailView:
+            nameView.editTextField.becomeFirstResponder()
+        case self.nameView:
+            passwordView.editTextField.becomeFirstResponder()
+        case self.passwordView:
+            editableFieldView.endEditing(true)
+            self.buttonAction(UIButton())
+        default:
+            break
+        }
+    }
+    
     func textFieldEdit(editableFieldView: AccountTextField , text : String) {
         if let checkCompleteDate = checkEnteredData (field: editableFieldView ,text : text) {
             editableFieldView.setInErrorMode(error: checkCompleteDate)
         }else{
             editableFieldView.edditErrorMessage.isHidden = true
         }
-        print(text ?? "")
+        print(text)
     }
     
     let viewModel = TestRegisterViewModel()
@@ -37,10 +51,19 @@ class TestRegisterViewController: UIViewController, AccountTextFieldDelegate {
         passwordView.delegate = self
         passwordView.setupView()
         passwordView.editButton.isHidden = false
+        passwordView.editTextField.returnKeyType = .go
+        passwordView.editTextField.isSecureTextEntry = true
+        passwordView.editTextField.placeholder = "password"
+        nameView.editTextField.placeholder = "name"
+        emailView.editTextField.placeholder = "email"
     }
     
     @IBAction func buttonAction(_ sender: Any) {
-        
+        if emailView.edditErrorMessage.isHidden && passwordView.edditErrorMessage.isHidden && nameView.edditErrorMessage.isHidden  && !emailView.getText()!.isEmpty &&  !nameView.getText()!.isEmpty &&  !passwordView.getText()!.isEmpty{
+            print("all fields is validated")
+        }else {
+            print("please verify all fields")
+        }
     }
     
     

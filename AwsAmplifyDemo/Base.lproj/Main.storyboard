@@ -64,7 +64,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-cS-mUf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="verification code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-cS-mUf">
                                 <rect key="frame" x="50" y="108" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pEb-81-t1H"/>
@@ -112,10 +112,7 @@
                                             <constraint firstAttribute="height" constant="50" id="jC6-ke-4DD"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your profile name "/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSpaceAccepted" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Name"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkC-SD-2ri" customClass="AccountTextField" customModule="AwsAmplifyDemo" customModuleProvider="target">
@@ -125,10 +122,7 @@
                                             <constraint firstAttribute="height" constant="55" id="ivT-eq-8yQ"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value=" Ex : darlene_reynolds@bobby.org"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="NO"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSpaceAccepted" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Email"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maV-tq-toC" customClass="AccountTextField" customModule="AwsAmplifyDemo" customModuleProvider="target">
@@ -138,10 +132,7 @@
                                             <constraint firstAttribute="height" constant="55" id="zU9-1h-NQz"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter at least 8 characters"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSpaceAccepted" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
