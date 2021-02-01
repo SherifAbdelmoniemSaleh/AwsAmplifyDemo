@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountTextField" customModule="AwsAmplifyDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="a1H-5C-FrR"/>
+                <outlet property="edditErrorMessage" destination="7Xp-rc-rL6" id="SNt-4L-c35"/>
+                <outlet property="editButton" destination="hiq-S4-fbu" id="eRP-Qw-2gW"/>
+                <outlet property="editImage" destination="CAQ-ze-MAK" id="qMj-kT-Scx"/>
+                <outlet property="editTextField" destination="OPV-gf-YRS" id="TNG-3A-ZP1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="464" height="85"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ic-oF-pke" customClass="RoundedView" customModule="AwsAmplifyDemo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="464" height="85"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPV-gf-YRS">
+                            <rect key="frame" x="45" y="30" width="409" height="25"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="2hh-B3-Uj9"/>
+                            </constraints>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedHolder" value="Email"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="megaphone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CAQ-ze-MAK">
+                            <rect key="frame" x="10" y="30" width="25" height="25.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="DGx-ib-X8C"/>
+                                <constraint firstAttribute="width" secondItem="CAQ-ze-MAK" secondAttribute="height" id="FFL-I6-FmU"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xp-rc-rL6">
+                            <rect key="frame" x="45" y="60" width="31" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" systemColor="systemPinkColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiq-S4-fbu">
+                            <rect key="frame" x="429" y="30" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="hiq-S4-fbu" secondAttribute="height" id="Bkd-Q5-hcb"/>
+                                <constraint firstAttribute="height" constant="25" id="eWq-oX-TCp"/>
+                            </constraints>
+                            <state key="normal" image="wallet.pass.fill" catalog="system"/>
+                            <state key="selected" image="pass_not_secured"/>
+                            <connections>
+                                <action selector="showHideAction:" destination="-1" eventType="touchUpInside" id="RUv-A6-CtI"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="1vA-ex-ElI"/>
+                        <constraint firstItem="7Xp-rc-rL6" firstAttribute="top" secondItem="OPV-gf-YRS" secondAttribute="bottom" constant="5" id="4JW-1g-Zit"/>
+                        <constraint firstItem="CAQ-ze-MAK" firstAttribute="width" secondItem="CAQ-ze-MAK" secondAttribute="height" id="BJU-GQ-giZ"/>
+                        <constraint firstItem="hiq-S4-fbu" firstAttribute="width" secondItem="hiq-S4-fbu" secondAttribute="height" id="DLc-Wa-X4h"/>
+                        <constraint firstItem="CAQ-ze-MAK" firstAttribute="centerY" secondItem="2Ic-oF-pke" secondAttribute="centerY" id="Sx8-b0-QQC"/>
+                        <constraint firstAttribute="trailing" secondItem="OPV-gf-YRS" secondAttribute="trailing" constant="10" id="TBC-7s-3BI"/>
+                        <constraint firstItem="OPV-gf-YRS" firstAttribute="leading" secondItem="CAQ-ze-MAK" secondAttribute="trailing" constant="10" id="UQW-v3-RX3"/>
+                        <constraint firstItem="CAQ-ze-MAK" firstAttribute="leading" secondItem="2Ic-oF-pke" secondAttribute="leading" constant="10" id="lxh-by-6Lk"/>
+                        <constraint firstItem="hiq-S4-fbu" firstAttribute="centerY" secondItem="2Ic-oF-pke" secondAttribute="centerY" id="pzl-cC-6uW"/>
+                        <constraint firstAttribute="trailing" secondItem="hiq-S4-fbu" secondAttribute="trailing" constant="10" id="sav-bQ-Thj"/>
+                        <constraint firstItem="7Xp-rc-rL6" firstAttribute="leading" secondItem="2Ic-oF-pke" secondAttribute="leading" constant="45" id="u5d-dr-Oxf"/>
+                        <constraint firstItem="OPV-gf-YRS" firstAttribute="centerY" secondItem="2Ic-oF-pke" secondAttribute="centerY" id="xQW-Gf-VMG"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2Ic-oF-pke" secondAttribute="trailing" id="2Rz-df-dxq"/>
+                <constraint firstItem="2Ic-oF-pke" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Dsb-Lf-7wx"/>
+                <constraint firstAttribute="bottom" secondItem="2Ic-oF-pke" secondAttribute="bottom" id="G1t-SM-APQ"/>
+                <constraint firstItem="2Ic-oF-pke" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mbG-xM-oxO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="44.927536231884062" y="297.65625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="megaphone.fill" catalog="system" width="128" height="114"/>
+        <image name="pass_not_secured" width="20.5" height="20.5"/>
+        <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
