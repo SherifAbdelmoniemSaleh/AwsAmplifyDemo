@@ -21,7 +21,7 @@ class ViewController: UIViewController , UITextFieldDelegate{
         if isUIAuth {
             checkSignInUI()
         }else{
-            //            checkSignIn()
+                        checkSignIn()
         }
 //        confirmSignUp (for: "ssaleh", with: "251492")
 //        resetPassword(username: "ssaleh")
@@ -43,7 +43,7 @@ class ViewController: UIViewController , UITextFieldDelegate{
         self.signUp (username: "ssaleh", password: "ssaleh1234", email: "sherief33392@gmail.com")
     }
     @IBAction func loginAction(_ sender: Any) {
-        self.signIn (username: "ssaleh", password: "ssaleh1234")
+        self.signIn (username: "msaleh", password: "msaleh1234")
     }
     @IBAction func resetPasswordAction(_ sender: Any) {
         

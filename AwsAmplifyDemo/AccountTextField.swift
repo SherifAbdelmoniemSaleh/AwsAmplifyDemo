@@ -10,8 +10,8 @@ import UIKit
 import IQKeyboardManagerSwift
 
 protocol  AccountTextFieldDelegate {
-    func fieldShouldReturn (editableFieldView: AccountTextField)
-    func textFieldBeginEditing (editableFieldView: AccountTextField)
+    func textFieldEdit (editableFieldView: AccountTextField , text : String)
+
 }
 class AccountTextField : UIView {
     @IBOutlet var contentView: UIView!
@@ -108,32 +108,21 @@ class AccountTextField : UIView {
     
 }
 extension AccountTextField : UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let delegate = delegate {
-            delegate.fieldShouldReturn(editableFieldView: self)
-        }
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let delegate = delegate {
-            delegate.fieldShouldReturn(editableFieldView: self)
-        }
-    }
+
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
         if !spaceAccepted {
-            if (string == " ") {
+            if (newText == " ") {
                 return false
             }
         }
+        if let delegate = delegate  {
+            delegate.textFieldEdit(editableFieldView: self, text: newText)
+        }
+//        textFieldEdit
         return true
     }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let delegate = delegate  {
-            delegate.textFieldBeginEditing(editableFieldView: self)
-        }
-    }
+
 }

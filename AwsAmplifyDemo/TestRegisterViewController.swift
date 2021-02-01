@@ -8,16 +8,15 @@
 import UIKit
 
 class TestRegisterViewController: UIViewController, AccountTextFieldDelegate {
-    func fieldShouldReturn(editableFieldView: AccountTextField) {
-        print(editableFieldView.getText())
+    func textFieldEdit(editableFieldView: AccountTextField , text : String) {
+        if let checkCompleteDate = checkEnteredData (field: editableFieldView ,text : text) {
+            editableFieldView.setInErrorMode(error: checkCompleteDate)
+        }else{
+            editableFieldView.edditErrorMessage.isHidden = true
+        }
+        print(text ?? "")
     }
     
-    func textFieldBeginEditing(editableFieldView: AccountTextField) {
-        print(editableFieldView.getText())
-        editableFieldView.edditErrorMessage.isHidden = true
-    }
-    
-
     let viewModel = TestRegisterViewModel()
     @IBOutlet weak var emailView: AccountTextField!
     @IBOutlet weak var nameView: AccountTextField!
@@ -28,7 +27,7 @@ class TestRegisterViewController: UIViewController, AccountTextFieldDelegate {
         super.viewDidLoad()
         setup()
     }
-
+    
     
     func setup(){
         emailView.delegate = self
@@ -41,33 +40,45 @@ class TestRegisterViewController: UIViewController, AccountTextFieldDelegate {
     }
     
     @IBAction func buttonAction(_ sender: Any) {
-        if let checkCompleteDate = checkEnteredData () {
-            checkCompleteDate.field.setInErrorMode(error: checkCompleteDate.message)
-        }else{
-            navigationController?.popViewController(animated: true)
-        }
+        
     }
     
-    func checkEnteredData () -> (field: AccountTextField, message: String)? {
-       
-            guard let name  = nameView.getText() ,!name.isEmpty else {
-                return (nameView, "missing data")
+    
+    func isValidEmail(_ param: String) -> Bool {
+        let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let paramPred = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return paramPred.evaluate(with: param)
+    }
+    
+    func checkEnteredData (field: AccountTextField , text : String ) -> (String)? {
+        
+        if field == nameView {
+            if text.isEmpty {
+                return ("missing data")
             }
-        if name.count < 2 {
-            return (nameView, "name is too short")
-        }
-        guard let email  = emailView.getText() ,!email.isEmpty else {
-            return (emailView, "missing data")
-        }
-        if email.count < 2 {
-            return (emailView, "email is too short")
-        }
-        guard let password  = passwordView.getText() ,!password.isEmpty else {
-            return (passwordView, "missing data")
-        }
-            if password.count < 8 {
-                return (passwordView, "password should be at least 8 digits")
+            if text.count < 2 {
+                return ("name is too short")
             }
+        }
+        
+        if field == emailView {
+            if text.isEmpty  {
+                return ( "missing data")
+            }
+            if !isValidEmail( text){
+                return ("email is wrong")
+            }
+        }
+        
+        if  field == passwordView {
+            if text.isEmpty {
+                return ("missing data")
+            }
+            if text.count < 8 {
+                return ("password should be at least 8 digits")
+            }
+        }
         return nil
-        }
+    }
 }
