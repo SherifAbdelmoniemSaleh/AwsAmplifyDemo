@@ -9,6 +9,7 @@ import UIKit
 import Amplify
 import AWSMobileClient
 import AWSPluginsCore
+import MBProgressHUD
 
 class ViewController: UIViewController , UITextFieldDelegate{
 
@@ -205,10 +206,11 @@ class ViewController: UIViewController , UITextFieldDelegate{
                 }
             case .failure(let error):
                 print("An error occurred while registering a user \(error)")
-            }
+                
+            
         }
     }
-    
+    }
     func confirmSignUp (for username: String, with confirmationCode: String) {
         Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
             switch result {
@@ -265,5 +267,20 @@ class ViewController: UIViewController , UITextFieldDelegate{
                 print("Reset password failed with error \(error)")
             }
         }
+    }
+}
+
+extension UIViewController {
+    func showIndicator(withTitle title: String, and description: String) {
+        let indicator = MBProgressHUD.showAdded(to: self.view, animated: true)
+        indicator.label.text = title
+        indicator.isUserInteractionEnabled = false
+        indicator.detailsLabel.text = description
+        indicator.show(animated: true)
+        self.view.isUserInteractionEnabled = false
+    }
+    func hideIndicator() {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        self.view.isUserInteractionEnabled = true
     }
 }

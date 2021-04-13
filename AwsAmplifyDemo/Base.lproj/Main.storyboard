@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="950.72463768115949" y="28.794642857142854"/>
         </scene>
-        <!--Test Register View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="CQa-by-otd">
             <objects>
-                <viewController id="Upk-So-wwH" customClass="TestRegisterViewController" customModule="AwsAmplifyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Upk-So-wwH" customClass="LoginViewController" customModule="AwsAmplifyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMV-Vh-TSd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,17 +105,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23H-Cs-BdK">
                                 <rect key="frame" x="0.0" y="138" width="414" height="448"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaD-Hd-nKn" customClass="AccountTextField" customModule="AwsAmplifyDemo" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="103" width="394" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="jC6-ke-4DD"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSpaceAccepted" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkC-SD-2ri" customClass="AccountTextField" customModule="AwsAmplifyDemo" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkC-SD-2ri">
                                         <rect key="frame" x="10" y="24" width="394" height="55"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -125,8 +115,8 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSpaceAccepted" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maV-tq-toC" customClass="AccountTextField" customModule="AwsAmplifyDemo" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="177" width="394" height="55"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maV-tq-toC">
+                                        <rect key="frame" x="10" y="89" width="394" height="55"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="zU9-1h-NQz"/>
@@ -135,28 +125,42 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSpaceAccepted" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Go6-1w-2aZ">
+                                        <rect key="frame" x="0.0" y="144" width="414" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="HvP-gb-7px"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qwt-jP-sng">
+                                        <rect key="frame" x="0.0" y="244" width="414" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="U39-d3-NeX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="jaD-Hd-nKn" firstAttribute="leading" secondItem="MkC-SD-2ri" secondAttribute="leading" id="5RQ-I7-7Ee"/>
                                     <constraint firstItem="MkC-SD-2ri" firstAttribute="top" secondItem="23H-Cs-BdK" secondAttribute="top" constant="24" id="7WP-kZ-x2L"/>
-                                    <constraint firstItem="jaD-Hd-nKn" firstAttribute="leading" secondItem="23H-Cs-BdK" secondAttribute="leading" constant="10" id="IS3-3n-Oxh"/>
-                                    <constraint firstItem="maV-tq-toC" firstAttribute="top" secondItem="jaD-Hd-nKn" secondAttribute="bottom" constant="24" id="Lei-xb-uFg"/>
-                                    <constraint firstItem="jaD-Hd-nKn" firstAttribute="top" secondItem="MkC-SD-2ri" secondAttribute="bottom" constant="24" id="Nyg-vX-lbO"/>
+                                    <constraint firstItem="Go6-1w-2aZ" firstAttribute="top" secondItem="maV-tq-toC" secondAttribute="bottom" id="OWr-0o-90E"/>
+                                    <constraint firstItem="Go6-1w-2aZ" firstAttribute="leading" secondItem="23H-Cs-BdK" secondAttribute="leading" id="SY6-ZV-MCW"/>
                                     <constraint firstItem="maV-tq-toC" firstAttribute="leading" secondItem="23H-Cs-BdK" secondAttribute="leading" constant="10" id="Y5f-zO-4g3"/>
                                     <constraint firstItem="MkC-SD-2ri" firstAttribute="leading" secondItem="23H-Cs-BdK" secondAttribute="leading" constant="10" id="Ysy-Nv-WnW"/>
+                                    <constraint firstItem="Qwt-jP-sng" firstAttribute="leading" secondItem="23H-Cs-BdK" secondAttribute="leading" id="Zxt-67-Qw4"/>
                                     <constraint firstAttribute="trailing" secondItem="maV-tq-toC" secondAttribute="trailing" constant="10" id="ceW-lc-yda"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qwt-jP-sng" secondAttribute="trailing" id="ehX-cA-RsD"/>
                                     <constraint firstAttribute="trailing" secondItem="MkC-SD-2ri" secondAttribute="trailing" constant="10" id="kEs-BG-DX3"/>
-                                    <constraint firstAttribute="trailing" secondItem="jaD-Hd-nKn" secondAttribute="trailing" constant="10" id="s6d-V8-zg5"/>
-                                    <constraint firstItem="jaD-Hd-nKn" firstAttribute="trailing" secondItem="MkC-SD-2ri" secondAttribute="trailing" id="zHz-T5-oa5"/>
+                                    <constraint firstItem="Qwt-jP-sng" firstAttribute="top" secondItem="Go6-1w-2aZ" secondAttribute="bottom" id="nD0-SF-8x9"/>
+                                    <constraint firstItem="maV-tq-toC" firstAttribute="top" secondItem="MkC-SD-2ri" secondAttribute="bottom" constant="10" id="vhd-qq-SbY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Go6-1w-2aZ" secondAttribute="trailing" id="zFE-vU-vFu"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7c0-Zy-5eG">
                                 <rect key="frame" x="20" y="812" width="374" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonAction:" destination="Upk-So-wwH" eventType="touchUpInside" id="2Uv-hQ-MQp"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KBQ-HQ-HGU"/>
@@ -173,15 +177,63 @@
                     </view>
                     <navigationItem key="navigationItem" id="dsH-Cb-fFz"/>
                     <connections>
-                        <outlet property="buttonAction" destination="7c0-Zy-5eG" id="6Ue-tv-Qlw"/>
-                        <outlet property="emailView" destination="MkC-SD-2ri" id="WmF-3b-bpe"/>
-                        <outlet property="nameView" destination="jaD-Hd-nKn" id="VNt-cR-MhQ"/>
-                        <outlet property="passwordView" destination="maV-tq-toC" id="NDP-0U-P5S"/>
+                        <outlet property="buttonAction" destination="7c0-Zy-5eG" id="DdH-WJ-tkK"/>
+                        <outlet property="passwordTF" destination="Qwt-jP-sng" id="eH0-EB-zlS"/>
+                        <outlet property="userNameTF" destination="Go6-1w-2aZ" id="D7l-WO-ESB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bs-Dy-1AO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="20"/>
+            <point key="canvasLocation" x="1765" y="29"/>
+        </scene>
+        <!--Countries View Controller-->
+        <scene sceneID="yzx-GU-k5f">
+            <objects>
+                <viewController storyboardIdentifier="CountriesViewController" id="4RI-sq-9D0" customClass="CountriesViewController" customModule="AwsAmplifyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8W4-3I-x6s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hHD-XK-Ky1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryTableViewCell" textLabel="vyf-md-YMv" style="IBUITableViewCellStyleDefault" id="3ZA-i8-sIO" customClass="CountryTableViewCell" customModule="AwsAmplifyDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3ZA-i8-sIO" id="HCm-PV-LBy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vyf-md-YMv">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ntx-8T-QPA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ntx-8T-QPA" firstAttribute="bottom" secondItem="hHD-XK-Ky1" secondAttribute="bottom" id="Wtm-RT-L6U"/>
+                            <constraint firstItem="ntx-8T-QPA" firstAttribute="trailing" secondItem="hHD-XK-Ky1" secondAttribute="trailing" id="Xly-Ku-eWV"/>
+                            <constraint firstItem="hHD-XK-Ky1" firstAttribute="leading" secondItem="ntx-8T-QPA" secondAttribute="leading" id="vWK-31-Ao7"/>
+                            <constraint firstItem="hHD-XK-Ky1" firstAttribute="top" secondItem="ntx-8T-QPA" secondAttribute="top" id="vja-ou-bda"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countriesTableView" destination="hHD-XK-Ky1" id="G8O-cC-Gya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9o-jw-xeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2500" y="29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cqx-yn-UOC">

@@ -66,7 +66,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="85" id="1vA-ex-ElI"/>
                         <constraint firstItem="7Xp-rc-rL6" firstAttribute="top" secondItem="OPV-gf-YRS" secondAttribute="bottom" constant="5" id="4JW-1g-Zit"/>
                         <constraint firstItem="CAQ-ze-MAK" firstAttribute="width" secondItem="CAQ-ze-MAK" secondAttribute="height" id="BJU-GQ-giZ"/>
                         <constraint firstItem="hiq-S4-fbu" firstAttribute="width" secondItem="hiq-S4-fbu" secondAttribute="height" id="DLc-Wa-X4h"/>

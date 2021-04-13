@@ -79,6 +79,7 @@ class AccountTextField : UIView {
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
+        
     }
     
     func setupView(){
